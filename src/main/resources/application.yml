@@ -4,3 +4,9 @@ spring:
     url: jdbc:mariadb://localhost:3306/userdb
     username: root
     password: 1234
+
+HttpMethods: >
+ "GET", "POST", "PUT", "DELETE", "OPTIONS"
+ 
+RequestHeaders: >
+  "Authorization", "Cache-Control", "Content-Type"
