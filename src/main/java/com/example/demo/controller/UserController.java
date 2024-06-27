@@ -23,11 +23,8 @@ public class UserController {
 		this.userService = userService;
 	}
 
-	@PostMapping("/join")
+	@PostMapping("/login")
 	public ResponseEntity<?> join(@RequestBody UserJoinDto userInfoDto) {
-		
-		userService.join(userInfoDto);
-		
 
 		return ResponseEntity.ok().body("JOIN TEST");
 	}

@@ -14,27 +14,5 @@ import lombok.extern.log4j.Log4j2;
 @Service
 public class UserService {
 	
-	private UserRepository userRepository;
-	private PasswordEncoder passwordEncoder;
-	
-	public UserService(PasswordEncoder passwordEncoder , UserRepository userRepository) {
-		this.passwordEncoder = passwordEncoder;
-		this.userRepository = userRepository;
-	}
-	
-	public ResponseEntity<?> join(UserJoinDto userJoinDto) {
-		User user = new User();
-//		user.setId(userJoinDto.getId());
-//		user.setPw(passwordEncoder.encode(userJoinDto.getPw()));
-//		user.setName(userJoinDto.getName());
-//		user.setPhone(userJoinDto.getPhone());
-//		user.setAddress(userJoinDto.getAddress());
-		try {
-			log.info(userRepository.save(userJoinDto.getId(), passwordEncoder.encode(userJoinDto.getPw()), userJoinDto.getName(), userJoinDto.getPhone(), userJoinDto.getAddress(), "GUEST"));
-		} catch(Exception e) {
-			log.info(e.getMessage());
-		}
-		return ResponseEntity.ok().build();
-	}
 
 }
